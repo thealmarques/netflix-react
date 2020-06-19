@@ -1,5 +1,8 @@
 import React from 'react'
 import netflixLogo from '@images/netflix.png';
+import searchWhite from '@images/search-white.png';
+import giftWhite from '@images/gift-white.png';
+import bellWhite from '@images/bell-white.png';
 import './header.scss';
 
 export const Header = () => {
@@ -19,6 +22,15 @@ export const Header = () => {
             </div>
 
             <div className="right-header">
+                <img src={searchWhite}
+                    className="search-icon"
+                    alt="Search"></img>
+                <img src={giftWhite}
+                    className="gift-icon"
+                    alt="Refer"></img>
+                <img src={bellWhite}
+                    className="bell-icon"
+                    alt="Notification"></img>
             </div>
         </div>
     )

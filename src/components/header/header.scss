@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 15px 30px 15px 30px;
+    width: 100%;
 }
 
 .left-header {
@@ -21,6 +22,26 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.search-icon {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+.gift-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.bell-icon {
+    width: 17px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 20px;
 }
 
 ul {
