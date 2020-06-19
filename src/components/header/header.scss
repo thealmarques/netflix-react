@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 30px 15px 30px;
+}
+
+.left-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.netflix-logo {
+    width: 95px;
+    height: 25px;
+}
+
+.right-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ul {
+    list-style:none;
+
+    li {
+        display: inline-block;
+        margin-right: 12px;
+        color: white;
+        font-family: 'Quicksand-Regular';
+        font-size: 14px;
+        cursor: pointer;
+
+        &:hover {
+            color: grey;
+        }
+    }
+}

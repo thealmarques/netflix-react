@@ -1,13 +1,11 @@
 import React from 'react';
 import './profile.scss';
-import netflixLogo from '@images/netflix.png';
+import { Header } from '../header/header';
 
 export const Profile = () => {
     return (
-        <div className="header">
-            <img src={netflixLogo}
-                className="netflix-logo"
-                alt="Netflix"></img>
+        <div className="test">
+            <Header></Header>
         </div>
     )
 }
