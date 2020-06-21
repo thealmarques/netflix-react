@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import netflixLogo from '@images/netflix.png';
 import searchWhite from '@images/search-white.png';
 import giftWhite from '@images/gift-white.png';
 import bellWhite from '@images/bell-white.png';
 import './header.scss';
+import onOutsideClick from '../../shared/components/onClickOutside/on-click-outside';
 
 export const Header = () => {
     return (
@@ -22,9 +23,7 @@ export const Header = () => {
             </div>
 
             <div className="right-header">
-                <img src={searchWhite}
-                    className="search-icon"
-                    alt="Search"></img>
+                <Search />
                 <img src={giftWhite}
                     className="gift-icon"
                     alt="Refer"></img>
@@ -34,4 +33,26 @@ export const Header = () => {
             </div>
         </div>
     )
+}
+
+function Search() {
+    const ref = useRef() as React.MutableRefObject<HTMLInputElement>;;
+    const [searchActive, setSearchActive] = useState(false);
+    onOutsideClick(ref, () => {
+        if (searchActive) {
+            setSearchActive(!searchActive);
+        }
+    });
+
+    if (!searchActive) {
+        return (
+            <img onClick={() => setSearchActive(!searchActive)} src={searchWhite}
+                className="search-icon"
+                alt="Search"></img>
+        );
+    } else {
+        return (
+            <input ref={ref} className="search-input" placeholder="Titles, people, genres" />
+        )
+    }
 }

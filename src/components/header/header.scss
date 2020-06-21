@@ -44,6 +44,14 @@
     margin-left: 20px;
 }
 
+.search-input {
+    background-color: transparent;
+    color: white;
+    -webkit-appearance: none;
+    outline: none;
+    user-select: none;
+}
+
 ul {
     list-style:none;
 
