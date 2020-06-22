@@ -3,6 +3,7 @@ import netflixLogo from '@images/netflix.png';
 import searchWhite from '@images/search-white.png';
 import giftWhite from '@images/gift-white.png';
 import bellWhite from '@images/bell-white.png';
+import arrowUp from '@images/arrow-up-white.png';
 import './header.scss';
 import onOutsideClick from '../../shared/components/onClickOutside/on-click-outside';
 
@@ -14,7 +15,7 @@ export const Header = () => {
                     className="netflix-logo"
                     alt="Netflix"></img>
                 <ul>
-                    <li>Home</li>
+                    <li className="label-active">Home</li>
                     <li>TV Shows</li>
                     <li>Movies</li>
                     <li>Recently Added</li>
@@ -27,9 +28,22 @@ export const Header = () => {
                 <img src={giftWhite}
                     className="gift-icon"
                     alt="Refer"></img>
-                <img src={bellWhite}
-                    className="bell-icon"
-                    alt="Notification"></img>
+                <div className='notification-container'>
+                    <img src={bellWhite}
+                        className="bell-icon"
+                        alt="Notification">
+                    </img>
+                    <div className="notification-area">
+                        <div className="arrow-up-container">
+                            <img src={arrowUp}
+                                className="arrow-up-icon"
+                                alt="Refer"></img>
+                        </div>
+                        <div className="notification-zone">
+                            No recent notifications
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

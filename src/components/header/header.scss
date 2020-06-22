@@ -5,6 +5,7 @@
     justify-content: space-between;
     margin: 15px 30px 15px 30px;
     width: 100%;
+    height: 50px;
 }
 
 .left-header {
@@ -22,6 +23,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
 }
 
 .search-icon {
@@ -42,6 +44,7 @@
     height: 20px;
     cursor: pointer;
     margin-left: 20px;
+    margin-top: 5px;
 }
 
 .search-bar {
@@ -74,6 +77,10 @@
     margin-left: 10px;
 }
 
+.label-active {
+    font-weight: bold;
+}
+
 ul {
     list-style:none;
 
@@ -89,4 +96,62 @@ ul {
             color: grey;
         }
     }
+}
+
+.notification-container {
+    cursor: pointer;
+
+    &:hover {
+        .notification-area {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.notification-area {
+    position: absolute;
+    width: 320px;
+    height: 90px;
+    padding-top: 40px;
+    right: 0;
+    top: 0;
+    text-align: end;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.notification-zone {
+    cursor: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-family: 'Quicksand-Bold';
+    width: 320px;
+    height: 90px;
+    background-color: rgb(20, 20, 20);
+    opacity: .5;
+    color: gray;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.arrow-up-container {
+    display: block;
+    float: right;
+    width: 320px;
+    border-bottom: 0.5px solid white;
+}
+
+.arrow-up-icon {
+    display: block;
+    float: right;
+    width: 12px;
+    height: 6.5px;
+    margin-right: 4px;
 }
