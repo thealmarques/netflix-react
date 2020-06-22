@@ -44,12 +44,34 @@
     margin-left: 20px;
 }
 
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-bar.active {
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    padding: 7px;
+}
+
 .search-input {
-    background-color: transparent;
     color: white;
-    -webkit-appearance: none;
-    outline: none;
-    user-select: none;
+    background: none;
+    border: none;
+    transition: width .5s;
+    width: 0px;
+
+    &:focus {
+        outline-width: 0;
+    }
+}
+
+.search-input.active {
+    width: 150px;
+    margin-left: 10px;
 }
 
 ul {

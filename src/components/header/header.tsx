@@ -38,21 +38,38 @@ export const Header = () => {
 function Search() {
     const ref = useRef() as React.MutableRefObject<HTMLInputElement>;;
     const [searchActive, setSearchActive] = useState(false);
+    const [searchBarClass, setSearchBarClass] = useState('search-bar');
+    const [searchInputClass, setSearchInputClass] = useState('search-input');
+
     onOutsideClick(ref, () => {
         if (searchActive) {
             setSearchActive(!searchActive);
+            setClassBasedOnSearch();
         }
     });
 
-    if (!searchActive) {
-        return (
-            <img onClick={() => setSearchActive(!searchActive)} src={searchWhite}
+    const setClassBasedOnSearch = () => {
+        if (!searchActive) {
+            setSearchBarClass('search-bar active');
+            setSearchInputClass('search-input active')
+        } else {
+            setSearchInputClass('search-input');
+            setTimeout(() => {
+                setSearchBarClass('search-bar');
+            }, 500);
+        }
+    }
+
+
+    return (
+        <div className={searchBarClass}>
+            <img onClick={() => {
+                setClassBasedOnSearch();
+                setSearchActive(!searchActive);
+            }} src={searchWhite}
                 className="search-icon"
                 alt="Search"></img>
-        );
-    } else {
-        return (
-            <input ref={ref} className="search-input" placeholder="Titles, people, genres" />
-        )
-    }
+            <input ref={ref} className={searchInputClass} placeholder="Titles, people, genres" />
+        </div>
+    )
 }
