@@ -1,4 +1,90 @@
-.test {
+.profile-container {
     background-color: rgb(20, 20, 20);
     display: flex;
+    overflow: scroll;
+    min-height: 100vh;
+    flex-direction: column;
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin-top: 70px;
+
+        .profile-title {
+            font-family: 'Quicksand-Bold';
+            font-size: 1.5rem;
+            color: white;
+            align-self: center;
+            margin-top: 40px;
+            margin-bottom: 35px;
+        }
+
+        .manage-container {
+            width: 160px;
+            height: 40px;
+            font-family: 'Quicksand-Regular';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-top: 40px;
+            border: solid 1px gray;
+            color: gray;
+            cursor: pointer;
+
+            &:hover {
+                border: solid 1px white;
+                color: white;
+            }
+        }
+
+        .choose-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+
+            .choose-option {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: pointer;
+                padding-left: 50px;
+                padding-right: 50px;
+
+                .choose-avatar-icon {
+                    width: 120px;
+                    height: 120px;
+                }
+
+                .choose-plus-icon {
+                    width: 120px;
+                    height: 120px;
+                }
+
+                .choose-text {
+                    font-family: 'Quicksand-Bold';
+                    font-size: 13px;
+                    color: gray;
+                    margin-top: 15px;
+                }
+
+                &:hover {
+                    .choose-avatar-icon {
+                        border: solid 2px white;
+                    }
+
+                    .choose-text {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
 }

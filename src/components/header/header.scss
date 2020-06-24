@@ -1,159 +1,301 @@
+$breakpoint-screen: 750px;
+
 .header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 15px 30px 15px 30px;
+    padding: 15px 30px 15px 30px;
+    height: 60px;
     width: 100%;
-    height: 50px;
-}
 
-.left-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.netflix-logo {
-    width: 95px;
-    height: 25px;
-}
-
-.right-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
-}
-
-.search-icon {
-    width: 17px;
-    height: 17px;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.gift-icon {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    margin-left: 20px;
-    z-index: 2;
-}
-
-.bell-icon {
-    width: 17px;
-    height: 20px;
-    cursor: pointer;
-    margin-left: 20px;
-    margin-top: 5px;
-}
-
-.search-bar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.search-bar.active {
-    border-color: white;
-    border-width: 1px;
-    border-style: solid;
-    padding: 7px;
-}
-
-.search-input {
-    color: white;
-    background: none;
-    border: none;
-    transition: width .5s;
-    width: 0px;
-
-    &:focus {
-        outline-width: 0;
-    }
-}
-
-.search-input.active {
-    width: 150px;
-    margin-left: 10px;
-}
-
-.label-active {
-    font-weight: bold;
-}
-
-ul {
-    list-style:none;
-
-    li {
-        display: inline-block;
-        margin-right: 12px;
-        color: white;
-        font-family: 'Quicksand-Regular';
-        font-size: 14px;
-        cursor: pointer;
-
-        &:hover {
-            color: grey;
+    .left-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        .left-dropdown {
+            display: none;
+            color: white;
+        }
+    
+        .left-list {
+            display: block;
+    
+            .categories-text {
+                font-family: 'Quicksand-Regular';
+                font-size: 13px;
+            }
+    
+            .label-active {
+                font-family: 'Quicksand-Bold';
+            }
+        }
+    
+        @media (max-width: $breakpoint-screen) {
+            .left-list {
+                display: none;
+            }
+    
+            .left-dropdown {
+                display: block;
+                margin-left: 20px;
+                font-size: 11px;
+                font-family: 'Quicksand-Bold';
+                cursor: pointer;
+            }
         }
     }
-}
-
-.notification-container {
-    cursor: pointer;
-
-    &:hover {
-        .notification-area {
-            visibility: visible;
+    
+    .netflix-logo {
+        width: 95px;
+        height: 25px;
+    }
+    
+    .right-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .search-icon {
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+        z-index: 4;
+    }
+    
+    .gift-icon {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin-left: 20px;
+        z-index: 4;
+    }
+    
+    .bell-icon {
+        width: 17px;
+        height: 20px;
+        cursor: pointer;
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+    
+    .search-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .search-bar.active {
+        border-color: white;
+        border-width: 1px;
+        border-style: solid;
+        padding: 7px;
+    }
+    
+    .search-input {
+        color: white;
+        background: none;
+        border: none;
+        transition: width .5s;
+        width: 0px;
+    
+        &:focus {
+            outline-width: 0;
+        }
+    }
+    
+    .search-input.active {
+        width: 150px;
+        margin-left: 10px;
+    }
+    
+    ul {
+        list-style:none;
+    
+        li {
+            display: inline-block;
+            margin-right: 12px;
+            color: white;
+            font-family: 'Quicksand-Regular';
+            font-size: 14px;
+            cursor: pointer;
+    
+            &:hover {
+                color: grey;
+            }
+        }
+    }
+    
+    .notification-container {
+        position: relative;
+        cursor: pointer;
+        z-index: 2;
+    
+        &:hover {
+            .notification-area {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    
+    .notification-area {
+        position: absolute;
+        width: 320px;
+        height: 90px;
+        padding-top: 40px;
+        right: 0;
+        top: 0;
+        text-align: end;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+    }
+    
+    .notification-zone {
+        cursor: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-family: 'Quicksand-Bold';
+        width: 320px;
+        height: 90px;
+        background-color: rgb(20, 20, 20);
+        opacity: .5;
+        color: gray;
+    
+        &:hover {
             opacity: 1;
         }
     }
-}
-
-.notification-area {
-    position: absolute;
-    width: 320px;
-    height: 90px;
-    padding-top: 40px;
-    right: 0;
-    top: 0;
-    text-align: end;
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-}
-
-.notification-zone {
-    cursor: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-family: 'Quicksand-Bold';
-    width: 320px;
-    height: 90px;
-    background-color: rgb(20, 20, 20);
-    opacity: .5;
-    color: gray;
-
-    &:hover {
-        opacity: 1;
+    
+    .arrow-up-container {
+        display: block;
+        float: right;
+        width: 320px;
+        border-bottom: 0.5px solid white;
     }
-}
-
-.arrow-up-container {
-    display: block;
-    float: right;
-    width: 320px;
-    border-bottom: 0.5px solid white;
-}
-
-.arrow-up-icon {
-    display: block;
-    float: right;
-    width: 12px;
-    height: 6.5px;
-    margin-right: 4px;
+    
+    .arrow-up-icon {
+        display: block;
+        float: right;
+        width: 12px;
+        height: 6.5px;
+        margin-right: 4px;
+    }
+    
+    .avatar-container {
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+        align-items: center;
+        position: relative;
+    
+        &:hover {
+            .avatar-options {
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+            }
+        }
+    }
+    
+    .avatar-icon {
+        width: 30px;
+        height: 30px;
+        margin-left: 20px;
+    }
+    
+    .arrow-down-icon {
+        width: 10px;
+        height: 5.5px;
+        margin-left: 10px;
+        transform: rotate(180deg);
+    }
+    
+    .avatar-options {
+        position: absolute;
+        width: 200px;
+        display: none;
+        top: 0;
+        right: 0;
+        padding-top: 50px;
+        padding-right: 23px;
+    }
+    
+    .list-options {
+        height: 220px;
+        width: 210px;
+        background-color: rgb(20, 20, 20);
+        opacity: .9;
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        margin-top: 5px;
+        box-shadow: 0px 0px 2px 1px rgba(255,255,255,0.32);
+    }
+    
+    .arrow-up-avatar {
+        align-self: flex-end;
+        display: flex;
+        width: 12px;
+        height: 6.5px;
+    }
+    
+    .profile-option {
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+        align-items: center;
+        justify-content: flex-start;
+        padding-bottom: 8px;
+    
+        &:first-child {
+            padding-top: 10px;
+        }
+    }
+    
+    .profile-text {
+        font-family: 'Quicksand-Regular';
+        margin-left: 12px;
+        color: white;
+    
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    .manage-profiles {
+        padding-top: 10px;
+        color: white;
+        font-family: 'Quicksand-Regular';
+        margin-left: 20px;
+    
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    .separator {
+        margin-top: 20px;
+        background-color: grey;
+        width: 100%;
+        height: 1px;
+        margin-bottom: 10px;
+    }
+    
+    .settings-option {
+        margin-left: 20px;
+        margin-top: 10px;
+        font-family: 'Quicksand-Bold';
+        color: white;
+    
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
