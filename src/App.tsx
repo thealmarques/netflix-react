@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.scss';
 import { Profile } from './components/profile/profile';
+import { Provider } from 'react-redux';
+import store from './shared/store';
 
 function App() {
   return (
-    <Profile></Profile>
+    <Provider store={store}>
+      <Profile></Profile>
+    </Provider>
   );
 }
 

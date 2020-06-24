@@ -4,9 +4,13 @@ import { Header } from '../header/header';
 import avatar1 from '@images/avatar.png';
 import avatar2 from '@images/avatar2.png';
 import plusIcon from '@images/plus.png';
+import { setUser } from '../../shared/store/actions/user.actions';
+import { useDispatch } from 'react-redux';
 
 
 export const Profile = () => {
+    const dispatch = useDispatch();
+
     return (
         <div className="profile-container">
             <Header></Header>
@@ -17,7 +21,10 @@ export const Profile = () => {
                         <img className="choose-avatar-icon" src={avatar1} alt="Avatar" />
                         <span className="choose-text">James Peterson</span>
                     </div>
-                    <div className="choose-option">
+                    <div onClick={() => dispatch(setUser({
+                                username: 'Holland Maggie'
+                            }))}
+                        className="choose-option">
                         <img className="choose-avatar-icon" src={avatar2} alt="Avatar" />
                         <span className="choose-text">Holland Maggie</span>
                     </div>

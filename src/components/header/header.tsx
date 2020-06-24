@@ -8,22 +8,26 @@ import avatar1 from '@images/avatar.png';
 import avatar2 from '@images/avatar2.png';
 import './header.scss';
 import onOutsideClick from '../../shared/components/onClickOutside/on-click-outside';
+import { useSelector } from 'react-redux';
+import { RootState } from 'shared/interfaces/root-state.interfaces';
 
 export const Header = () => {
+    const username = useSelector((state: RootState) => state.user.username);
+
     return (
         <div className="header">
             <div className="left-header">
                 <img src={netflixLogo}
                     className="netflix-logo"
                     alt="Netflix"></img>
-                <ul className="left-list">
+                <ul hidden={username.length === 0} className="left-list">
                     <li className="categories-text label-active">Home</li>
                     <li className="categories-text">TV Shows</li>
                     <li className="categories-text">Movies</li>
                     <li className="categories-text">Recently Added</li>
                     <li className="categories-text">My List</li>
                 </ul>
-                <div className="left-dropdown">
+                <div hidden={username.length === 0} className="left-dropdown">
                     Search
                     <img src={arrowUp}
                         className="arrow-down-icon"
@@ -31,7 +35,7 @@ export const Header = () => {
                 </div>
             </div>
 
-            <div className="right-header">
+            <div hidden={username.length === 0} className="right-header">
                 <Search />
                 <img src={giftWhite}
                     className="gift-icon"

@@ -19,9 +19,7 @@ $breakpoint-screen: 750px;
             color: white;
         }
     
-        .left-list {
-            display: block;
-    
+        .left-list {    
             .categories-text {
                 font-family: 'Quicksand-Regular';
                 font-size: 13px;
@@ -38,7 +36,6 @@ $breakpoint-screen: 750px;
             }
     
             .left-dropdown {
-                display: block;
                 margin-left: 20px;
                 font-size: 11px;
                 font-family: 'Quicksand-Bold';
