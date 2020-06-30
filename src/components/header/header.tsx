@@ -13,7 +13,6 @@ import { RootState } from 'shared/interfaces/root-state.interfaces';
 
 export const Header = () => {
     const username = useSelector((state: RootState) => state.user.username);
-
     return (
         <div className="header">
             <div className="left-header">

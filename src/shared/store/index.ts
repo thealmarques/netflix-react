@@ -1,4 +1,4 @@
-import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
+import { combineReducers, createStore } from 'redux';
 import { user } from './reducers/user.reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 

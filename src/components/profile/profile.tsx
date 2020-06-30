@@ -6,10 +6,11 @@ import avatar2 from '@images/avatar2.png';
 import plusIcon from '@images/plus.png';
 import { setUser } from '../../shared/store/actions/user.actions';
 import { useDispatch } from 'react-redux';
-
+import { useHistory } from 'react-router';
 
 export const Profile = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     return (
         <div className="profile-container">
@@ -21,9 +22,13 @@ export const Profile = () => {
                         <img className="choose-avatar-icon" src={avatar1} alt="Avatar" />
                         <span className="choose-text">James Peterson</span>
                     </div>
-                    <div onClick={() => dispatch(setUser({
-                                username: 'Holland Maggie'
-                            }))}
+                    <div onClick={() => {
+                        dispatch(setUser({
+                            username: 'Holland Maggie'
+                        }));
+                        console.log(history);
+                        history.push('/main');
+                    }}
                         className="choose-option">
                         <img className="choose-avatar-icon" src={avatar2} alt="Avatar" />
                         <span className="choose-text">Holland Maggie</span>

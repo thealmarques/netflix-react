@@ -1,0 +1,150 @@
+.dashboard-page {
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    overflow: scroll;
+    min-height: 100vh;
+    flex-direction: column;
+    position: relative;
+
+    .container {
+        .spotlight-video {
+            position: absolute;
+            // Specific for this project only (available video has a black margin, and I don't want it)
+            top: -40px;
+            width: 100%;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            padding-left: 5%;
+            margin-top: 15%;
+            width: 100%;
+
+            @media (max-width: 786px) {
+                margin-top: 2%;
+            }
+
+            .left-menu {
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+
+                .spotlight-logo {
+                    width: 13.1vw;
+                    height: 7.8vw;
+                }
+
+                .logline {
+                    width: 30vw;
+                    color: white;
+                    font-family: 'Quicksand-Regular';
+                    margin-top: 20px;
+                    font-size: 1.4vw;
+                    line-height: 1.5vw;
+                    text-align: justify;
+                }
+
+                .buttons {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 10px;
+
+                    .play-btn {
+                        border-radius: 5px;
+                        padding-left: 2vw;
+                        padding-right: 2vw;
+                        padding-top: 0.9vw;
+                        padding-bottom: 0.9vw;
+                        cursor: pointer;
+                        background-color: white;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        &:hover {
+                            background-color: gray;
+                        }
+
+                        .play-icon {
+                            width: 0.9vw;
+                            height: 0.9vw;
+                        }
+
+                        .play-text {
+                            font-family: 'Quicksand-Bold';
+                            margin-left: 10%;
+                            font-size: 1vw;
+                        }
+                    }
+
+                    .information-btn {
+                        border-radius: 5px;
+                        padding-left: 2vw;
+                        padding-right: 2vw;
+                        padding-top: 0.9vw;
+                        padding-bottom: 0.9vw;
+                        cursor: pointer;
+                        background-color: grey;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        margin-left: 1vw;
+                        opacity: 0.5;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+
+                        .info-icon {
+                            width: 0.9vw;
+                            height: 0.9vw;
+                        }
+
+                        .info-text {
+                            font-family: 'Quicksand-Bold';
+                            margin-left: 5px;
+                            color: white;
+                            font-size: 1vw;
+                        }
+                    }
+                }
+            }
+
+            .right-menu {
+                background-color: gray;
+                opacity: 0.6;
+                width: 3vw;
+                height: 3vw;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-self: flex-end;
+                cursor: pointer;
+
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                .sound-icon {
+                    width: 1.2vw;
+                    height: 1.2vw;
+                }
+            }
+        }
+
+        .recommendations {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin-top: 10%;
+            width: 100%;
+            font-family: 'Quicksand-Bold';
+            font-size: 1.5vw;
+        }
+    }
+}
