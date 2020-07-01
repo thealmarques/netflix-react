@@ -11,7 +11,7 @@ import { getPopularOnNetflix } from '../../shared/services/api/recommendations';
 import { Recommendation } from 'shared/interfaces/recommendation.interfaces';
 
 export const Dashboard = () => {
-    const [muteVideo, setVideoMuted] = useState(false);
+    const [muteVideo, setVideoMuted] = useState(true);
     const [popular, setPopular] = useState([] as Recommendation[]);
 
     useEffect(() => {
@@ -52,7 +52,7 @@ export const Dashboard = () => {
                     </div>
                 </div>
                 <div className="recommendations">
-                    Popular on Netflix
+                    <span className="title">Popular on Netflix</span>
                     <Carousel data={popular}></Carousel>
                 </div>
             </div>

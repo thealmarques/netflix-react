@@ -143,8 +143,12 @@
             position: relative;
             margin-top: 10%;
             width: 100%;
-            font-family: 'Quicksand-Bold';
-            font-size: 1.5vw;
+
+            .title {
+                font-family: 'Quicksand-Bold';
+                font-size: 1.5vw;
+                padding-left: 5%;
+            }
         }
     }
 }

@@ -26,7 +26,6 @@ export const Profile = () => {
                         dispatch(setUser({
                             username: 'Holland Maggie'
                         }));
-                        console.log(history);
                         history.push('/main');
                     }}
                         className="choose-option">

@@ -1,10 +1,10 @@
 .carousel {
     width: 100%;
     position: relative;
-
+    
     .arrow-icon {
-        width: 2vw;
-        height: 4vw;
+        width: 1.5vw;
+        height: 3vw;
     }
 
     .rotate180 {
@@ -13,11 +13,54 @@
 
     .back-container {
         position: absolute;
-        left: 0;
+        left: 1.5%;
+        top: 30px;
+        cursor: pointer;
     }
 
     .next-container {
         position: absolute;
-        right: 0;
+        right: 1.5%;
+        top: 30px;
+        cursor: pointer;
+    }
+
+    .data-container {
+        margin-top: 20px;
+        padding-left: 5%;
+        width: 15%;
+        height: 8vw;
+        cursor: pointer;
+        transition: all .1s ease-in-out;
+        position: relative;
+     
+        .item-poster {
+            position: absolute;
+            width: 100%;
+            height: 8vw;
+            visibility: visible;
+            transition: visibility 0.8s ease-in-out;
+        }
+
+        .item-video {
+            position: absolute;
+            width: 100%;
+            height: 8vw;
+            background-color: red;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+       &:hover {
+        transform: scale(1.9) translateX(10px);
+
+            .item-poster {
+                visibility: hidden;
+            }
+
+            .item-video {
+                opacity: 1;
+            }
+        }
     }
 }
