@@ -28,8 +28,8 @@ export const Dashboard = () => {
             <div className="container">
                 <div className="spotlight-video">
                     <video preload="true" loop muted={muteVideo} autoPlay>
-                    <source src="http://localhost:9081/media/umbrella_academy.mp4"
-                        type="video/mp4" />
+                        <source src="http://localhost:9081/media/umbrella_academy.mp4"
+                            type="video/mp4" />
                     </video>
                 </div>
                 <div className="menu">
