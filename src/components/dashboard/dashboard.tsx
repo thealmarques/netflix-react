@@ -27,7 +27,7 @@ export const Dashboard = () => {
             <Header></Header>
             <div className="container">
                 <div className="spotlight-video">
-                    <video preload="true" loop muted={muteVideo} autoPlay>
+                    <video preload="true" loop muted={muteVideo} autoPlay height="100%" width="100%">
                         <source src="http://localhost:9081/media/umbrella_academy.mp4"
                             type="video/mp4" />
                     </video>
@@ -50,6 +50,14 @@ export const Dashboard = () => {
                     <div className="right-menu" onClick={() => setVideoMuted(!muteVideo)}>
                         <img className="sound-icon" src={soundIcon} alt="Information" />
                     </div>
+                </div>
+                <div className="recommendations">
+                    <span className="title">Popular on Netflix</span>
+                    <Carousel data={popular}></Carousel>
+                </div>
+                <div className="recommendations">
+                    <span className="title">Popular on Netflix</span>
+                    <Carousel data={popular}></Carousel>
                 </div>
                 <div className="recommendations">
                     <span className="title">Popular on Netflix</span>
