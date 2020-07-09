@@ -59,7 +59,7 @@ export const Dashboard = () => {
                     popular.length > 0 && (
                         <div className="recommendations">
                             <span className="title">Popular on Netflix</span>
-                            <Carousel id="popular" data={popular}></Carousel>
+                            <Carousel id="popular" data={popular.reverse()}></Carousel>
                         </div>
                     )
                 }
@@ -67,7 +67,7 @@ export const Dashboard = () => {
                     trending.length > 0 && (
                         <div className="recommendations">
                             <span className="title">Trending Now</span>
-                            <Carousel id="trending" data={popular}></Carousel>
+                            <Carousel id="trending" data={trending}></Carousel>
                         </div>
                     )
                 }
@@ -75,7 +75,7 @@ export const Dashboard = () => {
                     releases.length > 0 && (
                         <div className="recommendations">
                             <span className="title">New Releases</span>
-                            <Carousel id="releases" data={popular}></Carousel>
+                            <Carousel id="releases" data={releases.reverse()}></Carousel>
                         </div>
                     )
                 }

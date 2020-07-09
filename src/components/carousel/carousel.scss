@@ -90,7 +90,7 @@ $animationSpeed: 40s;
         height: 9vw;
         position: relative;
         flex: 0 0 auto;
-        transition: all .8s 1s ease-in-out;
+        transition: all .3s .5s ease-in-out;
 
        &:hover {
         transform: scale(1.9);
@@ -119,7 +119,7 @@ $animationSpeed: 40s;
             width: 100%;
             height: 9vw;
             opacity: 0;
-            transition: opacity 0s 1.7s ease-in-out;
+            transition: opacity 0s .8s ease-in-out;
 
             .video-small {
                 object-fit: cover;
