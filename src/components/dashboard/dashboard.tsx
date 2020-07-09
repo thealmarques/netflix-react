@@ -7,18 +7,22 @@ import logo from '@images/breaking-bad-logo.png';
 import playIcon from '@images/play-button.png';
 import informationIcon from '@images/information-icon.png';
 import soundIcon from '@images/sound.png';
-import { getPopularOnNetflix } from '../../shared/services/api/recommendations';
+import { getRecommendedItems } from '../../shared/services/api/recommendations';
 import { Recommendation } from 'shared/interfaces/recommendation.interfaces';
 
 export const Dashboard = () => {
     const [muteVideo, setVideoMuted] = useState(true);
     const [popular, setPopular] = useState([] as Recommendation[]);
+    const [trending, setTrending] = useState([] as Recommendation[]);
+    const [releases, setReleases] = useState([] as Recommendation[]);
+
 
     useEffect(() => {
         const getPopular = async () => {
-            setPopular(await getPopularOnNetflix());
+            setPopular(await getRecommendedItems());
+            setTrending(await getRecommendedItems());
+            setReleases(await getRecommendedItems());
         };
-
         getPopular();
     }, []);
 
@@ -51,18 +55,30 @@ export const Dashboard = () => {
                         <img className="sound-icon" src={soundIcon} alt="Information" />
                     </div>
                 </div>
-                <div className="recommendations">
-                    <span className="title">Popular on Netflix</span>
-                    <Carousel data={popular}></Carousel>
-                </div>
-                <div className="recommendations">
-                    <span className="title">Popular on Netflix</span>
-                    <Carousel data={popular}></Carousel>
-                </div>
-                <div className="recommendations">
-                    <span className="title">Popular on Netflix</span>
-                    <Carousel data={popular}></Carousel>
-                </div>
+                {
+                    popular.length > 0 && (
+                        <div className="recommendations">
+                            <span className="title">Popular on Netflix</span>
+                            <Carousel id="popular" data={popular}></Carousel>
+                        </div>
+                    )
+                }
+                {
+                    trending.length > 0 && (
+                        <div className="recommendations">
+                            <span className="title">Trending Now</span>
+                            <Carousel id="trending" data={popular}></Carousel>
+                        </div>
+                    )
+                }
+                {
+                    releases.length > 0 && (
+                        <div className="recommendations">
+                            <span className="title">New Releases</span>
+                            <Carousel id="releases" data={popular}></Carousel>
+                        </div>
+                    )
+                }
             </div>
         </div>
     )
