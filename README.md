@@ -41,6 +41,7 @@ npm start
 ## Todo
 
 [] Reimplement carousel using Grid layout
+
 [] Use BEM Methodology in Sass
 
 ## Contributing
