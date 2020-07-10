@@ -62,7 +62,6 @@ $animationSpeed: 40s;
 
     .slider {
         position: relative;
-        z-index: 3;
         display: flex;
         flex-direction: row;
         overflow-x: visible;
@@ -85,12 +84,12 @@ $animationSpeed: 40s;
         opacity: 1;
         z-index: 100;
         margin-right: 5px;
-        margin-bottom: 15px;
         width: 17%;
         height: 9vw;
         position: relative;
         flex: 0 0 auto;
         transition: all .3s .5s ease-in-out;
+        margin-top: 2vw;
 
        &:hover {
         transform: scale(1.9);
