@@ -18,17 +18,17 @@ export const Carousel = (props: any) => {
 
     useEffect(() => {
         setCards(data.slice(0, batchSize * 2));
-    }, []);
+    }, [data]);
 
     useEffect(() => {
         if (cards.length > 12) {
             const slider = 
                 document.querySelector(`.carousel.${type} .slider-content`) as HTMLDivElement;
-            slider.style.transition = "transform 1s ease-in-out";
+            slider.style.transition = "transform .7s ease-in-out";
             slider.style.transform = `translate3d(-85%, 0px, 0px)`;
             setBackActive(true);
         }
-    }, [cards]);
+    }, [cards, type]);
 
     if (data.length > 0) {
         return (
@@ -101,7 +101,7 @@ export const Carousel = (props: any) => {
                     <div className="slider-content">
                         {
                             cards.map((value, index) => {
-                                return renderData(value, index);
+                                return renderData(value, index, type);
                             })
                         }
                     </div>
@@ -123,13 +123,13 @@ const renderPageItems = (length: number, nextPage: number) => {
     })
 }
 
-const renderData = (data: Recommendation, index: number) => {
+const renderData = (data: Recommendation, index: number, type: string) => {
     const mediaProvider = "http://localhost:9081/media/";
     return (
         <div
             key={index}
-            onMouseEnter={() => restartAnimation(index)}
-            onMouseMove={() => restartAnimation(index)}
+            onMouseEnter={() => restartAnimation(index, type)}
+            onMouseMove={() => restartAnimation(index, type)}
             id={`data-container-${index}`}
             className="data-container">
             <img className="item-poster"
@@ -151,8 +151,8 @@ const renderData = (data: Recommendation, index: number) => {
     )
 }
 
-const restartAnimation = (index: number) => {
-    const element = document.getElementsByClassName('video-container')[index] as HTMLElement;
+const restartAnimation = (index: number, type: string) => {
+    const element = document.querySelectorAll(`.carousel.${type} .video-container`)[index] as HTMLElement;
     element.style.animation = "none";
 
     setTimeout(() => {
