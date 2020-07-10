@@ -2,13 +2,13 @@
 
 This project is an implementation of the most known streaming platforms in the world.
 
-## Desktop Demo
-
-<img src="resources/netflix_desktop.gif" height="50%" width="80%"/>
-
 ## Mobile Demo
 
 <img src="resources/netflix_mobile.gif" height="50%" width="50%"/>
+
+## Desktop Demo
+
+<img src="resources/netflix_desktop.gif" height="50%" width="80%"/>
 
 ## Technologies
 
