@@ -40,7 +40,9 @@ npm start
 
 ## Todo
 
-[] Reimplement carousel using Grid layout
+[] Add static transitions
+
+[] Refactor carousel slider
 
 [] Use BEM Methodology in Sass
 
