@@ -13,14 +13,14 @@ export const Profile = () => {
     const history = useHistory();
 
     return (
-        <div className="profile-container">
+        <div className="profile">
             <Header></Header>
-            <div className="content-container">
-                <span className="profile-title">Who's watching?</span>
-                <div className="choose-container">
-                    <div className="choose-option">
-                        <img className="choose-avatar-icon" src={avatar1} alt="Avatar" />
-                        <span className="choose-text">James Peterson</span>
+            <div className="profile__container">
+                <span className="profile__container_title">Who's watching?</span>
+                <div className="profile__container__choose-container">
+                    <div className="profile__container__choose-container__option">
+                        <img className="profile__container__choose-container__option_icon" src={avatar1} alt="Avatar" />
+                        <span className="profile__container__choose-container__option_text">James Peterson</span>
                     </div>
                     <div onClick={() => {
                         dispatch(setUser({
@@ -28,20 +28,20 @@ export const Profile = () => {
                         }));
                         history.push('/main');
                     }}
-                        className="choose-option">
-                        <img className="choose-avatar-icon" src={avatar2} alt="Avatar" />
-                        <span className="choose-text">Holland Maggie</span>
+                        className="profile__container__choose-container__option">
+                        <img className="profile__container__choose-container__option_icon" src={avatar2} alt="Avatar" />
+                        <span className="profile__container__choose-container__option_text">Holland Maggie</span>
                     </div>
-                    <div className="choose-option">
-                        <img className="choose-avatar-icon" src={avatar2} alt="Avatar" />
-                        <span className="choose-text">Holland Maggie</span>
+                    <div className="profile__container__choose-container__option">
+                        <img className="profile__container__choose-container__option_icon" src={avatar2} alt="Avatar" />
+                        <span className="profile__container__choose-container__option_text">Holland Maggie</span>
                     </div>
-                    <div className="choose-option">
-                        <img className="choose-plus-icon" src={plusIcon} alt="Add profile" />
-                        <span className="choose-text">Add profile</span>
+                    <div className="profile__container__choose-container__option">
+                        <img className="profile__container__choose-container__option_plus-icon" src={plusIcon} alt="Add profile" />
+                        <span className="profile__container__choose-container__option_text">Add profile</span>
                     </div>
                 </div>
-                <div className="manage-container">
+                <div className="profile__container_manage-container">
                     Manage Profiles
                 </div>
             </div>

@@ -1,10 +1,11 @@
-.profile-container {
+.profile {
+    $block: ".profile";
     background-color: rgb(20, 20, 20);
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 
-    .content-container {
+    #{$block}__container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -12,7 +13,7 @@
         height: 100%;
         margin-top: 70px;
 
-        .profile-title {
+        &_title {
             font-family: 'Quicksand-Bold';
             font-size: 1.5rem;
             color: white;
@@ -21,7 +22,7 @@
             margin-bottom: 35px;
         }
 
-        .manage-container {
+        &_manage-container {
             width: 160px;
             height: 40px;
             font-family: 'Quicksand-Regular';
@@ -40,7 +41,7 @@
             }
         }
 
-        .choose-container {
+        &__choose-container {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -48,7 +49,7 @@
             flex-wrap: wrap;
             margin-top: 10px;
 
-            .choose-option {
+            &__option {
                 margin-top: 20px;
                 display: flex;
                 flex-direction: column;
@@ -57,33 +58,31 @@
                 padding-left: 50px;
                 padding-right: 50px;
 
-                .choose-avatar-icon {
+                &_icon {
                     width: 120px;
                     height: 120px;
+                    
+                    &:hover {
+                        border: solid 2px white;
+                    }
                 }
 
-                .choose-plus-icon {
+                &_plus-icon {
                     width: 120px;
                     height: 120px;
+
+                    &:hover {
+                        border: solid 2px white;
+                    }
                 }
 
-                .choose-text {
+                &_text {
                     font-family: 'Quicksand-Bold';
                     font-size: 13px;
                     color: gray;
                     margin-top: 15px;
-                }
 
-                &:hover {
-                    .choose-avatar-icon {
-                        border: solid 2px white;
-                    }
-
-                    .choose-plus-icon {
-                        border: solid 2px white;
-                    }
-
-                    .choose-text {
+                    &:hover {
                         color: white;
                     }
                 }
