@@ -44,7 +44,7 @@ npm start
 
 [] Refactor carousel slider
 
-[] Complete BEM Methodology in Sass (missing dashboard and carousel components)
+[60%] Complete BEM Methodology in Sass (missing dashboard and carousel components)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
