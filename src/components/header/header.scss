@@ -111,6 +111,8 @@ $breakpoint-screen: 750px;
         }
 
         &__notification-container {
+            $root: "header__right-menu__notification-container";
+
             position: relative;
             cursor: pointer;
             z-index: 2;
@@ -161,9 +163,9 @@ $breakpoint-screen: 750px;
                     }
                 }
             }
-        
+
             &:hover {
-                .header__right-menu__notification-container__notification-area {
+                .#{$root}__notification-area {
                     visibility: visible;
                     opacity: 1;
                 }
