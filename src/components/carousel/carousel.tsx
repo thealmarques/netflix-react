@@ -6,12 +6,15 @@ import playIcon from '@images/play-button.png';
 
 const batchSize = 6;
 
-export const Carousel = (props: any) => {
-    const data = props.data as Recommendation[];
-    const type = props.id as string;
+export const Carousel = (props: {
+    id: string;
+    data: Recommendation[]
+}) => {
+    const data = props.data;
+    const type = props.id;
     const totalPages = data.length / batchSize;
 
-    const [cards, setCards] = useState([] as Recommendation[]);
+    const [cards, setCards] = useState<Recommendation[]>([]);
     const [nextPage, setNextPage] = useState(1);
     const [previousPage, setPreviousPage] = useState(0);
     const [isBackActive, setBackActive] = useState(false);

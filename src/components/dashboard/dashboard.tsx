@@ -12,9 +12,9 @@ import { Recommendation } from 'shared/interfaces/recommendation.interfaces';
 
 export const Dashboard = () => {
     const [muteVideo, setVideoMuted] = useState(true);
-    const [popular, setPopular] = useState([] as Recommendation[]);
-    const [trending, setTrending] = useState([] as Recommendation[]);
-    const [releases, setReleases] = useState([] as Recommendation[]);
+    const [popular, setPopular] = useState<Recommendation[]>([]);
+    const [trending, setTrending] = useState<Recommendation[]>([]);
+    const [releases, setReleases] = useState<Recommendation[]>([]);
 
 
     useEffect(() => {
